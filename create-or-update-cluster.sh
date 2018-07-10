@@ -2,9 +2,6 @@
 
 set -euo pipefail
 
-JX_VERSION=1.3.76
-
-ORG=myorg03
 SA=~/.gke_sa.json
 
 function install_dependencies() {
