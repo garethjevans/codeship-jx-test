@@ -14,6 +14,7 @@ function install_dependencies() {
 
 function configure_environment() {
 	echo ${GKE_SA_JSON} > ${SA}
+	cat ${SA}
 	mkdir -p ~/.jx/organisations/organisation-${ORG}
     cp -R clusters ~/.jx/organisations/organisation-${ORG}
 
