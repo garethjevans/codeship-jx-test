@@ -1,1 +1,0 @@
-# terraform-jx-templates-gke
