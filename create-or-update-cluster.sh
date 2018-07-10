@@ -11,6 +11,8 @@ function install_dependencies() {
 
 function configure_environment() {
 	echo ${GKE_SA_JSON} > ${SA}
+	git config --global --add user.name ${GIT_USER}
+	git config --global --add user.email ${GIT_EMAIL}
 }
 
 function apply() {
