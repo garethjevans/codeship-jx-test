@@ -9,14 +9,14 @@ function install_dependencies() {
 	tar xvf jx-linux-amd64.tar.gz
 }
 
-#function configure_environment() {
+function configure_environment() {
 #	echo $GKE_SA_JSON > ~/.gke_sa.json
-#}
+}
 
 function apply() {
 	./jx version
 }
 
 install_dependencies
-#configure_environment
+configure_environment
 apply
