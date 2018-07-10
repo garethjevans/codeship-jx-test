@@ -10,7 +10,10 @@ function install_dependencies() {
 	unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 	rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 
-	wget https://github.com/jenkins-x/jx/releases/download/v${JX_VERSION}/jx-linux-amd64.tar.gz | tar xzv 
+	wget https://github.com/jenkins-x/jx/releases/download/v${JX_VERSION}/jx-linux-amd64.tar.gz
+	ls -al
+	tar xvf jx-linux-amd64.tar.gz
+	ls -al
 }
 
 #function configure_environment() {
