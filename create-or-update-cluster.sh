@@ -29,6 +29,8 @@ function install_dependencies() {
 	mv linux-amd64/helm ~/.jx/bin
 
 	ls -al ~/.jx/bin
+
+	gcloud --version
 }
 
 function configure_environment() {
