@@ -36,7 +36,7 @@ function configure_environment() {
 }
 
 function apply() {
-	./jx create terraform -c 'dev=gke' -b -o ${ORG} --gke-service-account ${SA}
+	./jx create terraform --verbose -c 'dev=gke' -b -o ${ORG} --gke-service-account ${SA}
 }
 
 install_dependencies
