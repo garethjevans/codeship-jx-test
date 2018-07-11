@@ -26,7 +26,7 @@ function install_dependencies() {
 	wget https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz
 	tar xvf helm-v${HELM_VERSION}-linux-amd64.tar.gz
 	rm helm-v${HELM_VERSION}-linux-amd64.tar.gz
-	mv helm ~/.jx/bin
+	mv linux-amd64/helm ~/.jx/bin
 
 	ls -al ~/.jx/bin
 }
