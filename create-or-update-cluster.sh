@@ -16,7 +16,6 @@ function configure_environment() {
 }
 
 function apply() {
-	./jx version
 	./jx create terraform -c 'dev=gke' -b -o ${ORG} --gke-service-account ${SA}
 }
 
