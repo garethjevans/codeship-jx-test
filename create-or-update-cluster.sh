@@ -27,10 +27,6 @@ function install_dependencies() {
 	tar xvf helm-v${HELM_VERSION}-linux-amd64.tar.gz
 	rm helm-v${HELM_VERSION}-linux-amd64.tar.gz
 	mv linux-amd64/helm ~/.jx/bin
-
-	ls -al ~/.jx/bin
-
-	gcloud --version
 }
 
 function configure_environment() {
