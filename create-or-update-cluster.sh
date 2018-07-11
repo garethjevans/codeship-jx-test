@@ -5,6 +5,7 @@ set -euo pipefail
 SA=~/.gke_sa.json
 
 TERRAFORM_VERSION=0.11.7
+KUBERNETES_VERSION=1.9.9
 
 function install_dependencies() {
 	wget https://github.com/jenkins-x/jx/releases/download/v${JX_VERSION}/jx-linux-amd64.tar.gz
@@ -16,6 +17,12 @@ function install_dependencies() {
 	unzip terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 	rm terraform_${TERRAFORM_VERSION}_linux_amd64.zip
 	mv terraform ~/.jx/bin
+	
+	wget https://storage.googleapis.com/kubernetes-release/release/v${KUBERNETES_VERSION}/bin/linux/amd64/kubectl
+	chmod +x kubectl
+	mv kubectl ~/.jx/bin
+
+	ls -al ~/.jx/bin
 }
 
 function configure_environment() {
