@@ -11,10 +11,10 @@ function install_dependencies() {
 
 	mkdir -p ~/.jx/bin
 
- 	wget https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz	
- 	tar xvf helm-v${HELM_VERSION}-linux-amd64.tar.gz	
- 	rm helm-v${HELM_VERSION}-linux-amd64.tar.gz	
- 	mv linux-amd64/helm ~/.jx/bin
+ 	#wget https://storage.googleapis.com/kubernetes-helm/helm-v${HELM_VERSION}-linux-amd64.tar.gz	
+ 	#tar xvf helm-v${HELM_VERSION}-linux-amd64.tar.gz	
+ 	#rm helm-v${HELM_VERSION}-linux-amd64.tar.gz	
+ 	#mv linux-amd64/helm ~/.jx/bin
 }
 
 function configure_environment() {
@@ -24,7 +24,7 @@ function configure_environment() {
 }
 
 function apply() {
-	./jx create terraform --verbose -c 'dev=gke' -b --install-dependencies -o ${ORG} --gke-service-account ${SA}
+	./jx create terraform --verbose -c 'dev=gke' -b --helm3 --install-dependencies -o ${ORG} --gke-service-account ${SA}
 }
 
 install_dependencies
