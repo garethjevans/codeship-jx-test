@@ -32,6 +32,7 @@ function apply() {
 	done
 	IFS=$OLDIFS
 
+	echo $CLUSTER_COMMAND
 	./jx create terraform --verbose ${CLUSTER_COMMAND} -b --install-dependencies -o ${ORG} --gke-service-account ${SA}
 }
 
