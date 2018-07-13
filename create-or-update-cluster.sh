@@ -24,7 +24,15 @@ function configure_environment() {
 }
 
 function apply() {
-	./jx create terraform --verbose -c 'dev=gke' -b --install-dependencies -o ${ORG} --gke-service-account ${SA}
+	OLDIFS=$IFS
+	CLUSTER_COMMAND=""
+	IFS=$','
+	for ENVIRONMENT in $ENVIRONMENTS; do
+		CLUSTER_COMMAND="${CLUSTER_COMMAND} -c '${ENVIRONMENT}'"
+	done
+	IFS=$OLDIFS
+
+	./jx create terraform --verbose ${CLUSTER_COMMAND} -b --install-dependencies -o ${ORG} --gke-service-account ${SA}
 }
 
 install_dependencies
